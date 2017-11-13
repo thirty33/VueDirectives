@@ -7,28 +7,35 @@ import router from './router'
 Vue.config.productionTip = false
 
 // directivas propias
-Vue.directive('fijar', {
-	bind(el, binding) {
-		console.log(el,binding)
-		el.style.position = 'fixed'
-		// expresiones
-		if(binding.expression) {
-			el.style.top = binding.expression + 'px'
-		}
-		// argumentos
-		if(binding.arg) {
-			let color = 'peru'
-			let modificadores = Object.keys(binding.modifiers)
-			// modificadores
-			if(modificadores.length > 0) {
-				color = modificadores[0]
-			}
-			el.style.backgroundColor = color
-		}
+// Vue.directive('fijar', {
+// 	bind(el, binding) {
+// 		console.log(el,binding)
+// 		el.style.position = 'fixed'
+// 		// expresiones
+// 		if(binding.expression) {
+// 			el.style.top = binding.expression + 'px'
+// 		}
+// 		// argumentos
+// 		if(binding.arg) {
+// 			let color = 'peru'
+// 			let modificadores = Object.keys(binding.modifiers)
+// 			// modificadores
+// 			if(modificadores.length > 0) {
+// 				color = modificadores[0]
+// 			}
+// 			el.style.backgroundColor = color
+// 		}
 
-		// modificadores
+// 		// modificadores
 
-	}
+// 	}
+// })
+
+// Custom directives object literals
+Vue.directive('fijar', function (el, binding){
+	el.style.position = 'fixed'
+	el.style.top = binding.value.top
+	el.style.backgroundColor = binding.value.background 
 })
 
 /* eslint-disable no-new */
