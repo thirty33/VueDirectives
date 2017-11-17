@@ -12,6 +12,7 @@
 		<!-- Uso de filtros -->
 		<h1>Filtros es vuejs</h1>
 		<h2>{{ msg | mayusculas | invertir }}</h2>
+		<h2>{{ msg2 | minusculas }}</h2>
 
 	</div>
 </template>
@@ -27,7 +28,8 @@
 		},
 		data(){
 			return {
-				msg: 'Mensaje para invertir'
+				msg: 'Mensaje para invertir',
+				msg2: 'MENSAJE PARA MINUSCULAS'
 			}
 		},	
 		mixins: [mixin],
@@ -37,6 +39,7 @@
 				alert('hola desde el component')
 			} 
 		},
+		// filtro local
 		filters: {
 			mayusculas(valor){
 				return valor.toUpperCase()

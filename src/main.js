@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// filtros globales
+
+Vue.filter('minusculas', (valor) => {
+	return valor.toLowerCase()
+})
+
 Vue.config.productionTip = false
 
 // directivas propias
