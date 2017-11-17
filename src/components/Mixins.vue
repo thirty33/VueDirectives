@@ -8,6 +8,11 @@
 
 		<input type="text" placeholder="agregar tecnologia" v-model="tecnologiaNueva" >
 		<button @click="agregarTecnologia">agregar</button>
+
+		<!-- Uso de filtros -->
+		<h1>Filtros es vuejs</h1>
+		<h2>{{ msg | mayusculas | invertir }}</h2>
+
 	</div>
 </template>
 
@@ -19,6 +24,11 @@
 		created() {
 		console.log('Created desde el Componente')
 		// this.saludar()
+		},
+		data(){
+			return {
+				msg: 'Mensaje para invertir'
+			}
 		},	
 		mixins: [mixin],
 		methods: {
@@ -26,6 +36,14 @@
 			saludar(){
 				alert('hola desde el component')
 			} 
+		},
+		filters: {
+			mayusculas(valor){
+				return valor.toUpperCase()
+			},
+			invertir(valor){
+				return valor.split('').reverse().join('')
+			}
 		}
 	}
 </script>

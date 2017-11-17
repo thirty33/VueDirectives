@@ -7,12 +7,12 @@ Vue.mixin({
 	created(){
 		// console.info('hola desde mixin global')
 		// alert('hola desde mixin global')
-		this.saludar(this.$options.nombre)
+		// this.saludar(this.$options.nombre)
 	},
 	methods: {
-		saludar(nombre) {
-			alert(`hola desde ${nombre}`)
-		}
+		// saludar(nombre) {
+		// 	alert(`hola desde ${nombre}`)
+		// }
 	}
 })
 
