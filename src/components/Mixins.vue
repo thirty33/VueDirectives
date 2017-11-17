@@ -16,6 +16,16 @@
 	import  {mixin} from '../mixins'
 	
 	export default {
-		mixins: [mixin]
+		created() {
+		console.log('Created desde el Componente')
+		this.saludar()
+		},	
+		mixins: [mixin],
+		methods: {
+			//mixins merge
+			saludar(){
+				alert('hola desde el component')
+			} 
+		}
 	}
 </script>

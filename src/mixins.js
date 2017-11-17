@@ -1,4 +1,8 @@
 export const mixin = {
+	created() {
+		console.log('Created desde el mixin')
+		this.saludar()
+	},
 	data() {
 			return {
 				porAprender: [
@@ -17,7 +21,11 @@ export const mixin = {
 					nombre: this.tecnologiaNueva
 				})
 				this.tecnologiaNueva = null
-			}
+			},
+			//mixins merge
+			saludar(){
+				alert('hola desde el mixin')
+			} 
 		},
 		computed: {
 			listaTecnologia(){
