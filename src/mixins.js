@@ -1,7 +1,28 @@
+// global mixins
+
+import Vue from 'vue'
+
+// Afecta a cada instancia de Vue indistintamente, usar con cuidado
+Vue.mixin({
+	created(){
+		// console.info('hola desde mixin global')
+		// alert('hola desde mixin global')
+		this.saludar(this.$options.nombre)
+	},
+	methods: {
+		saludar(nombre) {
+			alert(`hola desde ${nombre}`)
+		}
+	}
+})
+
+
+
+// local mixin
 export const mixin = {
 	created() {
 		console.log('Created desde el mixin')
-		this.saludar()
+		// this.saludar()
 	},
 	data() {
 			return {

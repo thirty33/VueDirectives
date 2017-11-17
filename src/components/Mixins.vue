@@ -18,7 +18,7 @@
 	export default {
 		created() {
 		console.log('Created desde el Componente')
-		this.saludar()
+		// this.saludar()
 		},	
 		mixins: [mixin],
 		methods: {
